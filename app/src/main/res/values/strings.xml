@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DailyTest</string>
+    <string name="send_text">发送文案</string>
+</resources>
