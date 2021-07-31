@@ -17,8 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".livadata.LivaDataActivity"
-            android:screenOrientation="portrait">
+            android:name=".livadata.LivaDataActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

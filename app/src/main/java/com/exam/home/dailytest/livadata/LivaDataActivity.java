@@ -5,8 +5,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.exam.home.dailytest.R;
 
@@ -39,12 +43,14 @@ public class LivaDataActivity extends AppCompatActivity {
 
     private void initVM() {
 //     MyViewModel myViewModel =   new ViewModelProvider().get(MyViewModel.class).
-        mMyViewModel = new MyViewModel();
+//        mMyViewModel = new MyViewModel();
+        mMyViewModel = ViewModelProviders.of(this).get(MyViewModel.class);
+
         mMyViewModel.mText.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Log.d(TAG, "调用: onChanged " + s);
-                mTextView.setText(s);
+                Log.d("yxy", "调用: onChanged " + s);
+                mTextView.setText("转屏幕接受到");
             }
         });
     }
